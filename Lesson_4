@@ -1,0 +1,92 @@
+      QUIZES
+  1. Check the array myNumbers in Listing 4.1. What are the indexes of the first and
+     last elements in that array?
+     
+        index of first: 0; index of the last: 4;
+        
+  2. If you need to allow the user to input strings, would you use C-style strings?
+  
+        Using std::string is more convinient and less risky.
+        
+  3.How many characters are in '\0' as seen by the compiler?
+        1 character
+        
+  4. You forget to end your C-style string with a null-terminator. What happens when
+     you use it?
+     
+        Prints the array, than continues printing other values from ram 'slots' until it reaches '\0'
+        
+  5. See the declaration of vector in Listing 4.4 and try composing a dynamic array that
+     contains elements of the type char.
+          
+          vector<char> (3); //dynamic array of chars with 3 elements
+          
+          
+    EXERCISES
+    
+  1. Declare an array that represents the squares on the chessboard; the type of the array
+being an enum that defines the pieces that may possibly occupy the squares.
+ HINT: The enum will contain enumerators (Rook, Bishop, and so on), thereby
+limiting the range of possible values that the elements in the array can hold. Don’t
+forget that a cell may also be empty!
+
+#include<iostream>
+int main()
+{
+    int chessBoard[8][8] = { {0}, {0} };
+    enum pieces { king = 1, queen, bishop, knight, rook, pawn };
+
+    chessBoard[0][3] = chessBoard[7][4] = king;
+    chessBoard[0][4] = chessBoard[7][3] = queen;
+    chessBoard[0][0] = chessBoard[0][7] = chessBoard[7][0] = chessBoard[7][7] = rook;
+    chessBoard[0][1] = chessBoard[0][6] = chessBoard[7][1] = chessBoard[7][6] = knight;
+    chessBoard[0][2] = chessBoard[0][5] = chessBoard[7][2] = chessBoard[7][5] = bishop;
+    for (int i = 0; i < 8; i++)
+    {
+        chessBoard[1][i] = chessBoard[6][i] = pawn;
+    }
+
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            std::cout << chessBoard[i][j] << ' ';
+        }
+        std::cout << '\n';
+    }
+    return 0;
+}
+
+2. BUG BUSTERS: What is wrong with this code fragment?
+
+    int myNumbers[5] = {0};
+    myNumbers[5] = 450; // Setting the 5th element to value 450
+    
+        answer: maximum index of myNumbers is 4.
+    
+3. BUG BUSTERS: What is wrong with this code fragment?
+      int myNumbers[5];
+      cout << myNumbers[3];
+      
+        answer: myNumbers[3] was not initialized.
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
