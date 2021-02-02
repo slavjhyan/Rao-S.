@@ -1,0 +1,46 @@
+QUIZES
+
+  1.What is the diiference between an interpreter and a compiler?
+        Ինտերպրետատորը թարգմնում, և փոխանցում է ծրագիրը մեքենային հասկանալի լեզվի գործողություն առ գործողություն, ի տարբերության կոմպիլյատորի, որը թարգմանում և փոխանցում է
+        ամբողջ ծրագիրը։ Այդ պատճառով կոմպիլյատորը ավելի արագ է աշխատում։
+  
+  2.What does the linker do?
+        Լինկերը ծրագիր է, որը "վերցնում է" մեկից ավելի օբյեկտ ֆայլեր ստեղծված կոմպիլյատորի կողմից և միավորում դրանք։
+      
+  3.What are the steps in normal development cycle?
+        "Development cyсle" - ի փուլերն են՝ 1)requirement analys, 2)design, 3)development, 4)testing, 5)implementation, 6)documentation, 7)evaluation
+      
+EXERCISES
+
+ 1.Write the output of the program`
+    
+ 1: #include <iostream>
+ 2: int main()
+ 3: {
+ 4: int x = 8;
+ 5: int y = 6;
+ 6: std::cout << std::endl;
+ 7: std::cout << x - y << " " << x * y << " " << x + y;
+ 8: std::cout << std::endl;
+ 9: return 0;
+10: }
+
+Output: 
+        2 48 14
+        
+        
+3. What do you think is the error in this program:
+
+1: include <iostream>
+2: int main()
+3: {
+4: std::cout << "Hello Buggy World \n";
+5: return 0;
+6: }
+
+Answer: Not found '#' before 'include'.
+
+4. Fix the error in the program in Exercise 3, compile, link, and run it. What
+does it do?
+
+Answer: prints Hello Buggy World, and goes to a new line.
