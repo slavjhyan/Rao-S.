@@ -1,1 +1,57 @@
+QUIZES
 
+    1. What is the problem in declaring Int main()?
+              C++ is a case sensitive language, Int must be written as int.
+              
+    2. Can comments be longer than one line?
+              If they are written between /* and */
+              
+              
+ EXERCISES
+ 
+   1. BUG BUSTERS: Enter this program and compile it. Why does it fail? How can
+you fix it?
+
+Before:
+1: #include <iostream>
+2: void main()
+3: {
+4: std::Cout << Is there a bug here?";
+5: }
+
+After:
+1: #include <iostream>
+2: int main()
+3: {
+4:      std::cout << "Is there a bug here?";
+        return 0;
+5: }
+   2. Fix the bug in Exercise 1 and recompile, link, and run it.
+        Outputs: Is there a bug here? 
+        
+   3. Modify Listing 2.4 to demonstrate subtraction (using –) and multiplication (using *).
+   
+ 1: #include <iostream>
+ 2: using namespace std;
+ 3:
+ 4: // Declare a function
+ 5: int DemoConsoleOutput();
+ 6:
+ 7: int main()
+ 8: {
+ 9: // Call i.e. invoke the function
+10: DemoConsoleOutput();
+11:
+12: return 0;
+13: }
+14:
+15: // Define i.e. implement the previously declared function
+16: int DemoConsoleOutput()
+17: {
+18: cout << "This is a simple string literal" << endl;
+19: cout << "Writing number five: " << 5 << endl;
+20: cout << "Performing multiplication 10 * 5 = " << 10 * 5 << endl;
+21: cout << "Performing subtration 22 - 7 = " << 22 - 7 << endl;
+23:
+24: return 0;
+25: }
