@@ -1,0 +1,67 @@
+    QUIZES
+    
+1.What is the differnece between signed and an unsign integer?
+      signed integer can have both negative and poitive value(most-significan bit, or sign bit, is used to show whether the value is positive or not).
+      unsigned integer can have only positive value(sign bit is used to hold a "number", not "sign")
+      
+2.Why should you not use #define to declare a constant?
+      Compiler doesn't know the type of the constant when we use #define.
+      
+3.Why would you initialize a variable?
+      Because variables are created to store values, which will be used/changed during the execution of the program.
+      
+4. Consider the enum below. What is the value of Queen?
+   enum YourCards {Ace, Jack, Queen, King};
+        Value of the Queen is 2.
+        
+5. What is wrong with this variable name?
+      int Integer = 0;
+      
+      'Integer' is a keyword, so it can't be a variable name.
+      
+      
+      
+    EXERCISES
+    
+1. Modify enum YourCards in quiz question 4 to demonstrate that the value of
+   Queen can be 45.
+      
+      enum YourCards{Ace = 43, Jack, Queen, King};
+      
+2. Write a program that demonstrates that the size of an unsigned integer and a normal
+   integer are the same, and that both are smaller in size than a long integer.
+   
+   #include<iostream>
+   int main()
+   {
+      std::cout << "Size of a signed int is " << sizeof(int) << std::endl;
+      std::cout << "Size of an unsigned int is " << sizeof(unsigned int) << std::endl;
+      std::cout << "Size of long is " << sizeof(long) << std::endl;
+      return 0;
+   }
+   
+ 3. Write a program to calculate the area and circumference of a circle where the
+    radius is fed by the user.
+    
+    #include<iostream>
+    int main()
+    {
+        const float pi = 22 / 7;
+        float radius;
+        std::cin >> radius;
+        double area;
+        area = pi * radius * radius;
+        circumference = 2 * pi * radius;
+        std::cout << area << ' ' << circumference << std::endl;
+        return 0;
+    }
+   
+ 4. In Exercise 3, if the area and circumference were to be stored in integers, how
+    would the output be any different?
+        
+        Numbers would be rounded down.(5.7 -> 5)
+        
+ 5.BUGBUSTERS: What is wrong in the following initialization:
+   auto Integer;
+      
+        Integer is a keyword, can't be a variable name.
