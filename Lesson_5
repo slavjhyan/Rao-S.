@@ -1,0 +1,28 @@
+Exercises
+
+ 1. Improve on the code in quiz question 5, using parenthesis to create clarity.
+              int result = (number << 1) + (5 << 1);
+ 
+ 2. What is the value of result stored by this expression:
+        int result = number << 1 + 5 << 1;// result == number * 2 + 5 * 2 == 2 * number + 10
+        
+ 3. Write a program that asks the user to input two Boolean values and demonstrates
+        the result of various bitwise operators on them.
+        
+        #include<iostream>
+        int main()
+        {
+            bool val1;
+	          bool val2;
+	          std::cin >> val1 >> val2;
+
+           	std::bitset<1> notVal1 (~val1);
+	          std::bitset<1> notVal2 (~val2);
+	          std::cout << " ~" << val1 << " = " << notVal1 << std::endl;
+	          std::cout << " ~" << val2 << " = " << notVal2 << std::endl;
+	          std::cout << val1 << " & " << val2 << " = " << (val1 & val2) << std::endl;
+	          std::cout << val1 << " | " << val2 << " = " << (val1 | val2) << std::endl;
+	          std::cout << val1 << " ^ " << val2 << " = " << (val1 ^ val2) << std::endl;
+            return 0;
+            
+        }
