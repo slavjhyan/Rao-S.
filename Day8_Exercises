@@ -130,7 +130,7 @@ int main()
 
 
 
-//6. Գրել ֆունկցիա, որը ստանում է զանգված եւ տպում է զանգվածի տարրերը էկրանին ռեկուրսիվ տարբերակով
+//7. Գրել ֆունկցիա, որը ստանում է զանգված եւ տպում է զանգվածի տարրերը էկրանին ռեկուրսիվ տարբերակով
 
 #include<iostream>
 void printArr(int*, int);
@@ -152,3 +152,125 @@ void printArr(int* arr, int n)
 }
 
 
+
+
+//8. Գրել ֆունկցիա, որը ստանում է տող եւ վերադարձնում տողի շրջված տարբերակը։
+
+#include<iostream>
+void printArr(int*, int);
+void reverseArr(int*, int);
+int main()
+{
+	int size;
+	std::cin >> size;
+	int* arr = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		std::cin >> arr[i];
+	}
+	reverseArr(arr, size);
+	printArr(arr, size);
+	delete[] arr;
+	return 0;
+}
+void printArr(int* arr, int n)
+{
+	if (n > 1)
+	{
+		printArr(arr, n - 1);
+	}
+	std::cout << arr[n - 1] << ' ';
+	return;
+}
+void reverseArr(int* arr, int n)
+{
+	for (int i = 0; i < n / 2; i++)
+	{
+		int tmp = arr[i];
+		arr[i] = arr[n - 1 - i];
+		arr[n - 1 - i] = tmp;
+	}
+}
+
+
+
+
+//9. Գրել ֆունկցիա, որը ստանում է զանգված եւ ինդեքսի համար։ Ֆունկցիան հեռացնում է զանգվածի տրված ինդեքսով տարրը եւ վերադարձնում նոր զանգվածը որպես արդյունք:
+
+#include<iostream>
+void printArr(int*, int);
+int* deleteElem(int*, int&, int);
+int main()
+{
+	int size;
+	std::cin >> size;
+	int* arr = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		std::cin >> arr[i];
+	}
+	int ix = 0;
+	std::cin >> ix;
+	arr = deleteElem(arr, size, ix);
+	printArr(arr, size);
+	delete[] arr;
+	return 0;
+}
+void printArr(int* arr, int n)
+{
+	if (n > 1)
+	{
+		printArr(arr, n - 1);
+	}
+	std::cout << arr[n - 1] << ' ';
+	return;
+}
+int* deleteElem(int* arr, int& size, int ix)
+{
+	for (int i = ix; i < size - 1; i++)
+	{
+		int tmp = arr[i];
+		arr[i] = arr[i + 1];
+		arr[i + 1] = tmp;
+	}
+	size--;
+	int* newArr = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		newArr[i] = arr[i];
+	}
+	return newArr;
+}
+
+
+
+
+
+
+//10. Գրել ֆունկցիա, որը վերադարձնում է թվի առաջին k թվանշանները։ Թիվն ու k-ն մուտքագրել։
+
+#include<iostream>
+#include<cmath>
+int rmDgts(int, int);
+int main()
+{
+	int num;
+	int k;
+	std::cin >> num >> k;
+	int ans = rmDgts(num, k);
+	std::cout << ans << std::endl;
+	return 0;
+}
+int rmDgts(int num, int x)
+{
+	int numDig = 0;
+	int numcpy = num;
+	while (numcpy != 0)
+	{
+		numcpy /= 10;
+		numDig++;
+	}
+	int toRemove = numDig - x;
+	num /= pow(10, toRemove);
+	return num;
+}
