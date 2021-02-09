@@ -1,0 +1,119 @@
+Exercises
+1. Write overloaded functions that calculate the volume of a sphere and a cylinder.
+    The formulas are the following:
+        Volume of sphere = (4 * Pi * radius * radius * radius) / 3
+        Volume of a cylinder = Pi * radius * radius * height
+        
+        #include<iostream>
+const float pi = 3.14;
+double volume(double radius);
+double volume(double radius, double height);
+int main()
+{
+	int height;
+	int radius = 0;
+	char choice;
+	std::cout << "Enter 'c' for cylinder and 's' for sphere: ";
+	std::cin >> choice;
+	double ans;
+	if (choice == 'c')
+	{
+		std::cout << "Enter the radius of cylinder: ";
+		std::cin >> radius;
+
+		std::cout << "Enter the height of cylinder: ";
+		std::cin >> height;
+		ans = volume(radius, height);
+	}
+	else {
+		std::cout << "Enter the radius of the sphere: ";
+		std::cin >> radius;
+		ans = volume(radius);
+	}
+	std::cout << ans << std::endl;
+	return 0;
+}
+double volume(const double radius)
+{
+	return	(4 * pi * radius * radius * radius) / 3;
+
+}
+
+double volume(const double radius, const double height)
+{
+	return	pi * radius * radius * height;
+
+}
+
+
+
+
+
+2. Write a function that accepts an array of double as input.
+
+#include<iostream>
+void foo(int[], int);
+int main()
+{
+	int arr[] = { 1, 2, 4, 56 };
+	int size = 4;
+	foo(arr, size);
+	return 0;
+}
+void foo(int arr[], int size)
+{
+	std::cout << "succed" << std::endl;
+}
+
+
+5. Write a function with return type void that still helps the caller calculate the area
+and circumference of a circle when supplied the radius.
+
+#include<iostream>
+double volume(double, float pi = 3.14);
+double volume(double, double, float pi = 3.14);
+int main()
+{
+	double height;
+	double radius = 0;
+	char choice;
+	char change;
+	float pi;
+	std::cout << "Do you wnat to change the value of pi?(y/n)";
+	std::cin >> change;
+	if (change == 'y')
+	{
+		std::cout << "Enter the new value of pi: ";
+		std::cin >> pi;
+	}
+	std::cout << "Enter 'c' for cylinder and 's' for sphere: ";
+	std::cin >> choice;
+	double ans;
+	if (choice == 'c')
+	{
+		std::cout << "Enter the radius of cylinder: ";
+		std::cin >> radius;
+
+		std::cout << "Enter the height of cylinder: ";
+		std::cin >> height;
+		change == 'y' ? ans = volume(radius, height, pi) : ans = volume(radius, height);
+	}
+	else {
+		std::cout << "Enter the radius of the sphere: ";
+		std::cin >> radius;
+		change == 'y' ? ans = volume(radius, pi) : ans = volume(radius);
+	}
+	std::cout << ans << std::endl;
+	return 0;
+}
+double volume(const double radius, float pi)
+{
+	return	(4 * pi * radius * radius * radius) / 3;
+
+}
+
+double volume(const double radius, const double height, float pi)
+{
+	return	pi * radius * radius * height;
+
+}
