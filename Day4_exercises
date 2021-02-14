@@ -300,40 +300,42 @@ int main()
 	*/
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/*15.
-	std::string str;
+	int main()
+{
+        std::string str;
         getline(std::cin, str);
+        LongestQue(str);
+        return 0;
+}
+void LongestQue(std::string str)
+{
         int max = 0;
-        int count = 0;
-        int size = 0;
-        char ans;
-        while(str[count++] != '\0'){
-                ++size;
+        char test = str[0];
+        int count = 1;
+        char symbol;
+        for(int i = 1; i < str.length(); i++)
+        {
+                if(str[i] == test)
+                {
+                        count++;
+                }
+                else
+                {
+                        if(max < count)
+                        {
+                                max = count;
+                                symbol = str[i - 1];
+                        }
+                        count = 0;
+                }
         }
 
-        count = 1;
-	int ix;
-        for(int i = 0; i < size; i++)
+        for(int i = 0; i < max; i++)
         {
-                char test = str[i];
-                for(int j = 0; j < size; j++)
-                {
-                        if(test == str[j])
-                        {
-                                count++;
-                        }
-                }
-                if(max < count){
-                        max = count;
-                        ans = str[i];
-			ix = i;
-                }
-                count = 0;
-        }
-	int end = ix + max;
-	for( ; ix < end - 1; ++ix)
-	{
-		std::cout << str[ix];
-	}
+                std::cout << symbol;
+        }       
+}
+
 	*/
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
