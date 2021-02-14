@@ -300,7 +300,9 @@ int main()
 	*/
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/*15.
-	int main()
+void LongestQue(std::string);
+
+int main()
 {
         std::string str;
         getline(std::cin, str);
@@ -313,7 +315,7 @@ void LongestQue(std::string str)
         char test = str[0];
         int count = 1;
         char symbol;
-        for(int i = 1; i < str.length(); i++)
+        for(int i = 1; i < str.length() + 1; i++)
         {
                 if(str[i] == test)
                 {
@@ -324,17 +326,19 @@ void LongestQue(std::string str)
                         if(max < count)
                         {
                                 max = count;
+                                test = str[i];
                                 symbol = str[i - 1];
                         }
-                        count = 0;
+                        count = 1;
                 }
         }
 
         for(int i = 0; i < max; i++)
         {
                 std::cout << symbol;
-        }       
+        }
 }
+
 
 	*/
 
